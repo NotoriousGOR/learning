@@ -16,7 +16,7 @@ export default function DogPics() {
 
   return (
     <div className="dog-pics">
-      <img src={dogsPic} alt="dog pic" />
+      <img src={dogsPic} alt="dog" />
       <button onClick={fetchDoggyPics}>🐶</button>
     </div>
   );
