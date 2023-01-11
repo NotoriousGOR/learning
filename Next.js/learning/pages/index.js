@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
@@ -60,8 +61,8 @@ export default function Home() {
         </div>
 
         <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          <Link
+            href="/learn/next"
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
@@ -72,7 +73,7 @@ export default function Home() {
             <p className={inter.className}>
               Find in-depth information about Next.js features and&nbsp;API.
             </p>
-          </a>
+          </Link>
 
           <a
             href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
