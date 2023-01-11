@@ -20,6 +20,11 @@ export default function Home() {
           <h1 className={inter.className}> Welcome to my e-learning center </h1>
         </div>
 
+        <Link href="/news/" className={styles.card}>
+          <h2 className={inter.className}>Top Stories &rarr;</h2>
+          <p className={inter.className}>Read articles currently on the homepage</p>
+        </Link>
+
         <div className={styles.grid}>
           <Link href="/learn/next" className={styles.card}>
             <h2 className={inter.className}>
