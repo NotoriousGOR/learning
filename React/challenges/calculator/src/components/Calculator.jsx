@@ -3,32 +3,16 @@ import { useReducer } from 'react'
 function reducer(state, action) {
   switch (action.type) {
     case 'update_number_1':
-      return {
-        number1: action.value,
-        number2: state.number2,
-        result: state.result,
-      }
+      return { ...state, number1: action.value }
 
     case 'update_number_2':
-      return {
-        number1: state.number1,
-        number2: action.value,
-        result: state.result,
-      }
+      return { ...state, number2: action.value }
 
     case 'add':
-      return {
-        number1: state.number1,
-        number2: state.number2,
-        result: state.number1 + state.number2,
-      }
+      return { ...state, result: state.number1 + state.number2 }
 
     case 'sub':
-      return {
-        number1: state.number1,
-        number2: state.number2,
-        result: state.number1 - state.number2,
-      }
+      return { ...state, result: state.number1 - state.number2 }
 
     default:
       return {
