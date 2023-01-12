@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className='flex-col'>
       <ul className={`${styles.card} m-5`}>
         <Link href="/" className={`${inter.className} pr-9`}>Home</Link>
         <Link href="/contacts" className={inter.className}>Contacts</Link>
