@@ -16,7 +16,7 @@ function Posts({ results, title }) {
         <ul>
           {results?.map((result) => (
             <li>
-              <a href={result.url} rel="noreferrer nofollower">
+              <a href={result.url} key={result.uri} rel="noreferrer nofollower">
                 {result.title}
               </a>
             </li>

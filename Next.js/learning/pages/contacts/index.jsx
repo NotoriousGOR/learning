@@ -9,7 +9,7 @@ export default function Contacts() {
       <ul>
         {contacts.map((contact) => (
             <Link href={`contacts/${contact.id}`}>
-            <li>{contact.id}</li>
+            <li key={contact.id} >{contact.id}</li>
             </Link>
         ))}
       </ul>
