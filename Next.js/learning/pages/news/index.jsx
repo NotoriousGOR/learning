@@ -12,7 +12,11 @@ export default function News({ results }) {
       <ul>
         {results.map((result) => (
           <li className="m-2" key={result.uri}>
-            <Link href={`${result.url}`} target="_blank">
+            <Link
+              href={`${result.url}`}
+              target="_blank"
+              rel="noopener norefferer"
+            >
               {result.title}
             </Link>
           </li>
