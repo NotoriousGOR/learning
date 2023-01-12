@@ -6,10 +6,10 @@ import { search } from '../api'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function NewsQuery({ results }) {
+export default function NewsQuery({ results, query }) {
   return (
     <Layout className="flex align-middle justify-center">
-      <h1 className={inter.className}>Search</h1>
+      <h1 className={inter.className}>Search: {query}</h1>
       <ul>
         {results.map((result) => (
           <li className="m-2" key={result.uri}>
@@ -35,6 +35,6 @@ export async function getServerSideProps({ params }) {
   )
 
   return {
-    props: { results },
+    props: { results, query: params.query },
   }
 }
