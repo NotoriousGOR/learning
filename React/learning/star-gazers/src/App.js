@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <hgroup>
+      <img src="images/group.svg" alt="alien group" />
+      <h1>Meet the StarGazers</h1>
+      <p>
+        Members of an <b>intergalactic alliance</b> paving the way for peace and
+        benevolence among all species. They are known for their enthusiasm for
+        science, for their love of fun, and their dedication to education.
+      </p>
+    </hgroup>
+  )
 }
-
-export default App;
+export default App
