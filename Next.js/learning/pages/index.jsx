@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,21 +10,28 @@ export default function Home() {
     {
       title: 'Top Stories',
       desc: 'Read articles currently on the homepage of the New York Times',
-      path: '/top-stories',
+      path: 'top-stories',
     },
     {
       title: 'Popular',
       desc: 'Read the most popular articles on the New York Times',
-      path: '/popular',
+      path: 'popular',
     },
   ]
   const [query, getQuery] = useState()
   const router = useRouter()
+
+  const inputRef = useRef(null)
+
   const handleOnChange = (e) => getQuery(e.target.value)
   const handleOnSubmit = (e) => {
     e.preventDefault()
     router.push(`/search/${query}`)
   }
+
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -38,7 +45,7 @@ export default function Home() {
         <h1 className={styles.title}>News Feed</h1>
 
         <form onSubmit={handleOnSubmit}>
-          <input type="text" onChange={handleOnChange} />
+          <input type="text" onChange={handleOnChange} ref={inputRef} />
         </form>
 
         <div className={styles.grid}>

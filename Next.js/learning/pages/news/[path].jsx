@@ -3,7 +3,6 @@ import Layout from '../../components/Layout'
 import { handler } from '../api'
 
 function Posts({ results, title }) {
-  // Render post...
   return (
     <Layout>
       <Head>

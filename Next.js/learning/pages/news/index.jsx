@@ -1,6 +1,5 @@
 import Layout from '../../components/Layout'
 import { Inter } from '@next/font/google'
-import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import { handler } from '../api'
 
