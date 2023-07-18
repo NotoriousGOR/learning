@@ -68,6 +68,8 @@ export default function Home() {
             <Image
               src={selectedPhoto.url}
               alt={selectedPhoto.title}
+              sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 900px"
+              quality={100}
               fill={true}
             />
           )}
