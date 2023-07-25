@@ -1,0 +1,25 @@
+Definitions:
+========================================================================
+* Threads of execution: goes line by line and runs or executes the code
+
+* Execution Context: An execution context is a data structure that tracks
+the execution program or function. It contains the local scope, and
+variable values.
+
+* Call Stack: A queue of functions that are running or will be ran
+
+* Higher Order Function: Any function that takes in or returns a function
+
+* Callback Function: The function you insert into a Higher Order function
+
+* Memory Leak: Literally wasted space in a computer's memory. ie, a variable that's never modified or used
+
+Notes:
+========================================================================
+* Functions are stored as first-class objects; Meaning they have the same
+properties as objects
+* Even arrays are just objects behind the scenes
+* On arrow functions if you have something like:
+    const multiplyBy2 = (input) => input*2
+  Javascript will automatically insert "{return input*2}" for you.
+*
