@@ -443,8 +443,11 @@ console.log(combineOperations(0, [add100, divByFive, multiplyByThree])); // Shou
 console.log(combineOperations(0, [divByFive, (n) => n * 5, (n) => n + 10])); // Should output 10
 
 // Challenge 23
-function myFunc(array, callback) {}
+function myFunc(array, callback) {
+  return array.findIndex(callback);
+}
 
+const numbers = [2, 3, 6, 64, 10, 8, 12];
 const evens = [2, 4, 6, 8, 10, 12, 64];
 
 function isOdd(num) {
@@ -452,11 +455,17 @@ function isOdd(num) {
 }
 
 // /*** Uncomment these to check your work! ***/
-// console.log(myFunc(numbers, isOdd)); // Output should be 1
-// console.log(myFunc(evens, isOdd)); // Output should be -1
+console.log(myFunc(numbers, isOdd)); // Output should be 1
+console.log(myFunc(evens, isOdd)); // Output should be -1
 
 // Challenge 24
-function myForEach(array, callback) {}
+function myForEach(array, callback) {
+  let output = 0;
+
+  array.forEach((item) => (output = callback(item)));
+
+  return output;
+}
 
 let sum = 0;
 
@@ -465,6 +474,6 @@ function addToSum(num) {
 }
 
 // /*** Uncomment these to check your work! ***/
-// const nums = [1, 2, 3];
-// myForEach(nums, addToSum);
-// console.log(sum); // Should output 6
+const nums2 = [1, 2, 3];
+myForEach(nums2, addToSum);
+console.log(sum); // Should output 6
