@@ -333,7 +333,7 @@ function objFilter(object, callback) {
     if (Object.hasOwnProperty.call(object, key)) {
       const element = object[key];
 
-      object[key] !== callback(key) && delete object[key];
+      element !== callback(key) && delete element;
     }
   }
 
