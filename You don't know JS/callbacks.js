@@ -415,7 +415,16 @@ console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
 console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
 
 // Challenge 22
-function combineOperations(startVal, arrOfFuncs) {}
+function combineOperations(startVal, arrOfFuncs) {
+  let output = startVal;
+
+  for (let index = 0; index < arrOfFuncs.length; index++) {
+    const fn = arrOfFuncs[index];
+    output = fn(output);
+  }
+
+  return output;
+}
 
 function add100(num) {
   return num + 100;
@@ -430,8 +439,8 @@ function multiplyByThree(num) {
 }
 
 // /*** Uncomment these to check your work! ***/
-// console.log(combineOperations(0, [add100, divByFive, multiplyByThree])); // Should output 60 -->
-// console.log(combineOperations(0, [divByFive, multiplyFive, addTen])); // Should output 10
+console.log(combineOperations(0, [add100, divByFive, multiplyByThree])); // Should output 60 -->
+console.log(combineOperations(0, [divByFive, (n) => n * 5, (n) => n + 10])); // Should output 10
 
 // Challenge 23
 function myFunc(array, callback) {}
