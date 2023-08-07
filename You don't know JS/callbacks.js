@@ -352,12 +352,12 @@ console.log(objFilter(startingObj, half)); // should log: { 2: 1, 6: 3 }
 function rating(arrOfFuncs, value) {
   const maxScore = 100;
 
-  const pointsPerCallBack = maxScore / arrOfFuncs.length;
+  const possiblePointsPerCallBack = maxScore / arrOfFuncs.length;
 
   let score = 0;
 
   for (let index = 0; index < arrOfFuncs.length; index++) {
-    if (arrOfFuncs[index](value)) score += pointsPerCallBack;
+    if (arrOfFuncs[index](value)) score += possiblePointsPerCallBack;
   }
 
   return score;
@@ -373,26 +373,46 @@ console.log(rating(checks, 64)); // should log: 100
 console.log(rating(checks, 66)); // should log: 75
 
 // Challenge 20
-function pipe(arrOfFuncs, value) {}
+function pipe(arrOfFuncs, value) {
+  return arrOfFuncs.reduce((accum, fn) => {
+    return fn(accum) || fn(value);
+  }, "");
+}
 
 // /*** Uncomment these to check your work! ***/
-// const capitalize = str => str.toUpperCase();
-// const addLowerCase = str => str + str.toLowerCase();
-// const repeat = str => str + str;
-// const capAddlowRepeat = [capitalize, addLowerCase, repeat];
-// console.log(pipe(capAddlowRepeat, 'cat')); // should log: 'CATcatCATcat'
+const capitalize = (str) => str.toUpperCase();
+const addLowerCase = (str) => str + str.toLowerCase();
+const repeat = (str) => str + str;
+const capAddlowRepeat = [capitalize, addLowerCase, repeat];
+console.log(pipe(capAddlowRepeat, "cat")); // should log: 'CATcatCATcat'
 
 // Challenge 21
-function highestFunc(objOfFuncs, subject) {}
+// I feel like reduce can be used here instead, but I'm unsure how
+function highestFunc(objOfFuncs, subject) {
+  let tempValue = 0;
+  let winner = "";
+
+  for (const key in objOfFuncs) {
+    if (Object.hasOwnProperty.call(objOfFuncs, key)) {
+      const fn = objOfFuncs[key];
+
+      if (fn(subject) > tempValue) winner = key;
+
+      tempValue = fn(subject);
+    }
+  }
+
+  return winner;
+}
 
 // /*** Uncomment these to check your work! ***/
-// const groupOfFuncs = {};
-// groupOfFuncs.double = n => n * 2;
-// groupOfFuncs.addTen = n => n + 10;
-// groupOfFuncs.inverse = n => n * -1;
-// console.log(highestFunc(groupOfFuncs, 5)); // should log: 'addTen'
-// console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
-// console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
+const groupOfFuncs = {};
+groupOfFuncs.double = (n) => n * 2;
+groupOfFuncs.addTen = (n) => n + 10;
+groupOfFuncs.inverse = (n) => n * -1;
+console.log(highestFunc(groupOfFuncs, 5)); // should log: 'addTen'
+console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
+console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
 
 // Challenge 22
 function combineOperations(startVal, arrOfFuncs) {}
