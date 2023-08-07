@@ -349,16 +349,28 @@ const half = (n) => n / 2;
 console.log(objFilter(startingObj, half)); // should log: { 2: 1, 6: 3 }
 
 // Challenge 19
-function rating(arrOfFuncs, value) {}
+function rating(arrOfFuncs, value) {
+  const maxScore = 100;
+
+  const pointsPerCallBack = maxScore / arrOfFuncs.length;
+
+  let score = 0;
+
+  for (let index = 0; index < arrOfFuncs.length; index++) {
+    if (arrOfFuncs[index](value)) score += pointsPerCallBack;
+  }
+
+  return score;
+}
 
 // /*** Uncomment these to check your work! ***/
-// const isEven = n => n % 2 === 0;
-// const greaterThanFour = n => n > 4;
-// const isSquare = n => Math.sqrt(n) % 1 === 0;
-// const hasSix = n => n.toString().includes('6');
-// const checks = [isEven, greaterThanFour, isSquare, hasSix];
-// console.log(rating(checks, 64)); // should log: 100
-// console.log(rating(checks, 66)); // should log: 75
+const isEven = (n) => n % 2 === 0;
+const greaterThanFour = (n) => n > 4;
+const isSquare = (n) => Math.sqrt(n) % 1 === 0;
+const hasSix = (n) => n.toString().includes("6");
+const checks = [isEven, greaterThanFour, isSquare, hasSix];
+console.log(rating(checks, 64)); // should log: 100
+console.log(rating(checks, 66)); // should log: 75
 
 // Challenge 20
 function pipe(arrOfFuncs, value) {}
