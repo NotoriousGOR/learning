@@ -1,0 +1,9 @@
+{
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "execute": "yarn tsc index && node index.js"
+  }
+}
