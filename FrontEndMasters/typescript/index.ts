@@ -28,6 +28,7 @@ function addTwoNumbers(
     .map((x) => +x)
     .reverse();
   console.log(reversedArray);
+  
   return reversedArray;
 }
 
