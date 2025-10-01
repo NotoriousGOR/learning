@@ -1,18 +1,27 @@
 #include <iostream>
 
-// Linear Search Algorithm
-// Big O Analysis: In the worst case, we might have to iterate through the entire array, meaning the worst-case time complexity is O(n).
-// Omega Analysis: In the best case, the element we are searching for might be the first element in the array. In this case, the function would return after only one comparison. Therefore, the best-case time complexity is Ω(1).
-// Theta Analysis: On average, we might expect to find the element somewhere in the middle of the array. However, even on average, we still need to iterate through a portion of the array that scales linearly with the size of the array. The average case time complexity is Θ(n).
+// Binary Search Algorithm
+// Big O Analysis: In the worst case, we might have to divide the array in half log(n) times, meaning the worst-case time complexity is O(log n).
+// Omega Analysis: In the best case, the element we are searching for might be the middle element of the array. In this case, the function would return after only one comparison. Therefore, the best-case time complexity is Ω(1).
+// Theta Analysis: On average, we might expect to find the element after dividing the array in half log(n) times. The average case time complexity is Θ(log n).
 
-int linearSearch(int arr[], int size, int target) {
-   for( int i = 0; i < size; i++) {
-        if (arr[i] == target) {
-            return i; // Found at index i
+int binarySearch(int arr[], int size, int target) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2; // To avoid potential overflow
+
+        if (arr[mid] == target) {
+            return mid; // Found at index mid
+        } else if (arr[mid] < target) {
+            left = mid + 1; // Search in the right half
+        } else {
+            right = mid - 1; // Search in the left half
         }
-   }
+    }
 
-   return -1; // Not found
+    return -1; // Not found
 }
 
 int main() {
@@ -23,7 +32,7 @@ int main() {
     
     // Dividing the total bytes by one-element bytes yields the element count
     int size = sizeof(arr) / sizeof(arr[0]);
-    int result = linearSearch(arr, size, target);
+    int result = binarySearch(arr, size, target);
 
     if (result != -1) {
         std::cout << "Element found at index: " << result << std::endl;
