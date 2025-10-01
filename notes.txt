@@ -1,0 +1,54 @@
+Asymptotic Notation (Big O, Omega, Theta)
+=========================================
+What it is: A way to analyze the efficiency in algorithms especially with large data sets.
+
+Why is it important: It can be used to determine what algorithm should be used for the problem at hand.
+
+Additional information: Disregard constants like "2(On)" -> "On"
+
+
+Big O Notation
+==============
+What it is: Represents the worst case scenario of an algorithm's runtime.
+
+Examples:
+
+O(1): Constant time. The runtime is independent of the input size. 
+Example: Accessing an element in an array by its index.
+
+O(log n): Logarithmic time. The runtime grows logarithmically with the input size. 
+Example: Binary search in a sorted array.
+
+O(n): Linear time. The runtime grows linearly with the input size. 
+Example: Searching for an element in an unsorted array.
+
+O(n log n): The runtime grows proportionally to n multiplied by the logarithm of n. 
+Example: Merge sort, heap sort.
+
+O(n²): Quadratic time. The runtime grows quadratically with the input size. 
+Example: Bubble sort, insertion sort.
+
+O(2ⁿ): Exponential time. The runtime grows exponentially with the input size. 
+Example: Trying all possible subsets of a set.
+
+O(n!): Factorial time. The runtime grows factorially with the input size. 
+Example: Trying all possible permutations of a set.
+
+Omega Notation
+==============
+What it is: Describes the best case scenario of an algorithm's runtime.
+
+Examples:
+An algorithm that always takes at least linear time to process its input is said to be Ω(n).
+
+Any comparison-based sorting algorithm requires at least O(n log n) comparisons in the worst case. In the best case, some (adaptive) sorting algorithms such as insertion sort can achieve O(n) when the input is nearly sorted. So it could be said that insertion sort is Ω(n).
+
+Theta Notation
+==============
+What it is: Describes the average-case scenario, but doesn't necessarily perfectly align with average case. 
+In essence, Θ(g(n)) provides a more precise characterization of the algorithm's growth rate than either Big O or Omega alone
+
+Examples:
+Binary search, when implemented correctly always divides the search space in half. Thus, it has Θ(log n) time complexity.
+
+An algorithm that iterates through all elements of an array exactly once has a time complexity of Θ(n).
