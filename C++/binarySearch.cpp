@@ -6,20 +6,27 @@
 // Omega Analysis: In the best case, the element we are searching for might be the middle element of the array. In this case, the function would return after only one comparison. Therefore, the best-case time complexity is Ω(1).
 // Theta Analysis: On average, we might expect to find the element after dividing the array in half log(n) times. The average case time complexity is Θ(log n).
 
-int binarySearch(int arr[], int size, int target) {
+int binarySearch(int arr[], int size, int target)
+{
     int left = 0;
     int right = size - 1;
 
     // while left index does not exceed right index
-    while (left <= right) {
+    while (left <= right)
+    {
         // find the middle index to avoid overflow
         int mid = left + (right - left) / 2;
 
-        if (arr[mid] == target) {
+        if (arr[mid] == target)
+        {
             return mid; // Found at index mid
-        } else if (arr[mid] < target) {
+        }
+        else if (arr[mid] < target)
+        {
             left = mid + 1; // Search in the right half
-        } else {
+        }
+        else
+        {
             right = mid - 1; // Search in the left half
         }
     }
@@ -27,19 +34,23 @@ int binarySearch(int arr[], int size, int target) {
     return -1; // Not found
 }
 
-int main() {
+int main()
+{
     std::cout << "Hello, world!" << std::endl;
 
-    int arr[] = {1,2,3,4,5,6,7,8};
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
     int target = 9;
-    
+
     // Dividing the total bytes by one-element bytes yields the element count
     int size = sizeof(arr) / sizeof(arr[0]);
     int result = binarySearch(arr, size, target);
 
-    if (result != -1) {
+    if (result != -1)
+    {
         std::cout << "Element found at index: " << result << std::endl;
-    } else {
+    }
+    else
+    {
         std::cout << "Element not found in the array." << std::endl;
     }
 
