@@ -1,6 +1,7 @@
 #include <iostream>
 
-// Binary Search Algorithm
+// Binary Search Algorithm: Requires a sorted array as input and works by repeatedly dividing the search interval in half.
+
 // Big O Analysis: In the worst case, we might have to divide the array in half log(n) times, meaning the worst-case time complexity is O(log n).
 // Omega Analysis: In the best case, the element we are searching for might be the middle element of the array. In this case, the function would return after only one comparison. Therefore, the best-case time complexity is Ω(1).
 // Theta Analysis: On average, we might expect to find the element after dividing the array in half log(n) times. The average case time complexity is Θ(log n).
@@ -9,8 +10,10 @@ int binarySearch(int arr[], int size, int target) {
     int left = 0;
     int right = size - 1;
 
+    // while left index does not exceed right index
     while (left <= right) {
-        int mid = left + (right - left) / 2; // To avoid potential overflow
+        // find the middle index to avoid overflow
+        int mid = left + (right - left) / 2;
 
         if (arr[mid] == target) {
             return mid; // Found at index mid

@@ -1,6 +1,7 @@
 #include <iostream>
 
-// Linear Search Algorithm
+// Linear Search Algorithm: A simple search algorithm that checks each element in the array sequentially until it finds the target element or reaches the end of the array.
+
 // Big O Analysis: In the worst case, we might have to iterate through the entire array, meaning the worst-case time complexity is O(n).
 // Omega Analysis: In the best case, the element we are searching for might be the first element in the array. In this case, the function would return after only one comparison. Therefore, the best-case time complexity is Ω(1).
 // Theta Analysis: On average, we might expect to find the element somewhere in the middle of the array. However, even on average, we still need to iterate through a portion of the array that scales linearly with the size of the array. The average case time complexity is Θ(n).
