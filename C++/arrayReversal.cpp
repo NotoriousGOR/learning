@@ -25,6 +25,13 @@ int main()
     int size = sizeof(arr) / sizeof(arr[0]);
     int *reversedArr = arrayReversal(arr, size);
 
+    std::cout << "Original Array: ";
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << arr[i] << " "; // Output each element of the original array
+    }
+    std::cout << std::endl;
+
     std::cout << "Reversed Array: ";
 
     for (int i = 0; i < size; i++)
