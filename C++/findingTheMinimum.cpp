@@ -1,5 +1,5 @@
 #include <iostream>
-#include <limits.h>
+#include <limits>
 
 // Finding the Minimum: Write a function to find the minimum element in an unsorted array. What are the Big O, Omega, and Theta complexities?
 

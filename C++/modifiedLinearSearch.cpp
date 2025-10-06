@@ -1,7 +1,6 @@
-// Modified Linear Search: Consider a linear search function that stops as soon as it finds the element or encounters an element greater than the target (assuming the array is sorted up to the point of the target). Analyze the Big O, Omega, and Theta complexities in this specific scenario.
-
 #include <iostream>
-#include <limits.h>
+
+// Modified Linear Search: Consider a linear search function that stops as soon as it finds the element or encounters an element greater than the target (assuming the array is sorted up to the point of the target). Analyze the Big O, Omega, and Theta complexities in this specific scenario.
 
 // Big O Analysis: In the worst case, the function will iterate through the entire array, leading to a time complexity of O(n).
 // Omega Analysis: In the best case, the function finds the target at the first position, resulting in a time complexity of Ω(1).
